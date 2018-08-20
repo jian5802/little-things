@@ -1,0 +1,406 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+ul{
+	list-style-type: none;
+}
+
+a{
+	text-decoration: none;
+}
+
+.head{
+	width: 100%;
+	height: 50px;
+	background-color: #333;
+	position: relative;
+}
+
+.head .server{
+	width: 1250px;
+	height: 50px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.head .server .ul_one{
+	width: 600px;
+	height: 40px;
+	margin-top: 5px;
+	position: absolute;
+	left: 0px;
+}
+
+.head .server .ul_one li{
+	line-height: 40px;
+	float: left;
+	font-size: 12px;
+	margin-left: 15px;
+}
+
+.head .server .ul_one a{
+	color: #b0b0b0;
+}
+
+.head .server .ul_one li :hover{
+	color: white;
+}
+
+.head .server .ul_two{
+	width: 150px;
+	height: 40px;
+	margin-top: 5px;
+	position: absolute;
+	right: 125px;
+}
+
+.head .server .ul_two li{
+	line-height: 40px;
+	float: left;
+	font-size: 12px;
+	margin-left: 15px;
+}
+
+.head .server .ul_two .user a{
+	color: #b0b0b0;
+}
+
+.head .server .ul_two li :hover{
+	color: white;
+}
+
+.server .shopping{
+	width: 100px;
+	height: 40px;
+	margin-top: 5px;
+	text-align: right;
+	position: absolute;
+	right: 9px;
+	background-image: url(./imgs/购物车.png);
+	background-repeat: no-repeat;
+	background-position: 15px,-200px;
+}
+
+.server .shopping a{
+	line-height: 40px;
+	font-size: 12px;
+	color: #b0b0b0;
+}
+
+.server .shopping  a:hover{
+	color: white;
+}
+
+.navigation{
+	width: 1250px;
+	height: 56px;
+	margin: 0 auto;
+	position: relative;
+	margin-top: 20px;
+
+}
+.navigation .log{
+	width: 56px;
+	height: 56px;
+	background-image: url(./imgs/mi.png);
+	background-position: 0px,-200px;
+	float: left;
+	position: absolute;
+	left: 10px;
+
+}
+
+.navigation .things{
+	width: 670px;
+	height: 40px;
+	float: left;
+	position: absolute;
+	left: 220px;
+	margin-top: 8px;
+}
+
+.navigation .things li{
+	float: left;
+	line-height: 40px;
+	font-size: 16px;
+	margin-left: 25px;
+}
+
+.navigation .things a{
+	color: black;
+}
+
+.navigation .things a:hover{
+	color: orange;
+}
+
+.navigation .explor{
+	width: 251px;
+	height: 40px;
+	float: left;
+	margin-top: 8px;
+	position: absolute;
+	right: 9px;
+}
+
+.navigation .explor .ss{
+	width: 200px;
+	line-height: 40px;
+	position: absolute;
+	left: 0px;
+	border:1px solid #b0b0b0; 
+}
+
+.navigation .explor .magnifier{
+	width: 51px;
+	height: 40px;
+	background-image: url(./imgs/ss.png);
+	background-repeat: no-repeat;
+	background-position: -2px, -200px;
+	position: absolute;
+	right: 0px;
+	border:1px solid #b0b0b0; 
+}
+
+
+
+.content{
+	width: 1250px;
+	height: 465px;
+	margin: 0 auto;
+	margin-top: 20px;
+	position: relative;
+}
+
+.content .side{
+	width: 235px;
+	height: 465px;
+	background-color: gray;
+	position: absolute;
+	left: 10px;
+}
+
+.content .side .cont_one{
+	width: 235px;
+	height: 43px;
+	position: absolute;
+	top: 17.5px;
+}
+.content .side .cont_two{
+	width: 235px;
+	height: 43px;
+	position: absolute;
+	top: 60.5px;
+}
+.content .side .cont_three{
+	width: 235px;
+	height: 43px;
+	position: absolute;
+	top: 103.5px;
+}
+.content .side .cont_four{
+	width: 235px;
+	height: 43px;
+	position: absolute;
+	top: 146.5px;
+}
+.content .side .cont_five{
+	width: 235px;
+	height: 43px;
+	position: absolute;
+	top: 189.5px;
+}
+.content .side .cont_six{
+	width: 235px;
+	height: 43px;
+	position: absolute;
+	top: 232.5px;
+}
+.content .side .cont_seven{
+	width: 235px;
+	height: 43px;
+	position: absolute;
+	top: 275.5px;
+}
+.content .side .cont_eight{
+	width: 235px;
+	height: 43px;
+	position: absolute;
+	top: 318.5px;
+}
+.content .side .cont_nine{
+	width: 235px;
+	height: 43px;
+	position: absolute;
+	top: 361.5px;
+}
+.content .side .cont_ten{
+	width: 235px;
+	height: 43px;
+	position: absolute;
+	bottom: 17.5px;
+}
+
+.content .side .cont_one,.cont_two,.cont_three,.cont_four,.cont_five,
+.cont_six,.cont_seven,.cont_eight,.cont_nine,.cont_ten{
+	padding-left: 30px;
+}
+.content .side a{
+	float: left;
+	line-height: 43px;
+	font-size: 16px;
+	color: white;
+}
+.content .side .cont_one:hover{
+	background-color: orange;
+}
+.content .side .cont_two:hover{
+	background-color: orange;
+}
+.content .side .cont_three:hover{
+	background-color: orange;
+}
+.content .side .cont_four:hover{
+	background-color: orange;
+}
+.content .side .cont_five:hover{
+	background-color: orange;
+}
+.content .side .cont_six:hover{
+	background-color: orange;
+}
+.content .side .cont_seven:hover{
+	background-color: orange;
+}
+.content .side .cont_eight:hover{
+	background-color: orange;
+}
+.content .side .cont_nine:hover{
+	background-color: orange;
+}
+.content .side .cont_ten:hover{
+	background-color: orange;
+}
+
+.content .side .arrow{
+	width: 43px;
+	height: 43px;
+	position: absolute;
+	right: 40px;
+	background-image: url(./imgs/向右箭头.png);
+	background-repeat: no-repeat;
+	background-position: 0px,-200px;
+}
+.content .imgs{
+	width: 996px;
+	height: 465px;
+	background-color: pink;
+	position: absolute;
+	right: 9px;
+}
+
+.foot{
+	width: 1250px;
+	height: 170px;
+	margin: 0 auto;
+	margin-top: 15px;
+	position: relative;
+}
+
+.foot .bottom_one{
+	width: 235px;
+	height: 170px;
+	position: absolute;
+	left: 10px;
+	background-color: #5f5750;
+}
+.foot .bottom_one .box_1{
+	width: 77px;
+	height: 85px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background-color: red;
+}
+
+.foot .bottom_one .box_1{
+	width: 77px;
+	height: 84px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background-color: red;
+}
+
+.foot .bottom_one .box_2{
+	width: 77px;
+	height: 84px;
+	position: absolute;
+	top: 0px;
+	left: 79px;
+	background-color: red;
+}
+
+.foot .bottom_one .box_3{
+	width: 77px;
+	height: 84px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	background-color: red;
+}
+
+.foot .bottom_one .box_4{
+	width: 77px;
+	height: 84px;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	background-color: red;
+}
+
+.foot .bottom_one .box_5{
+	width: 77px;
+	height: 84px;
+	position: absolute;
+	bottom: 0px;
+	left: 79px;
+	background-color: red;
+}
+
+.foot .bottom_one .box_6{
+	width: 77px;
+	height: 84px;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	background-color: red;
+}
+
+
+
+.foot .bottom_two{
+	width: 317px;
+	height: 170px;
+	position: absolute;
+	left: 260px;
+	background-color: red;
+}
+
+.foot .bottom_three{
+	width: 317px;
+	height: 170px;
+	position: absolute;
+	left: 592px;
+	background-color: green;
+}
+
+.foot .bottom_four{
+	width: 317px;
+	height: 170px;
+	position: absolute;
+	right: 9px;
+	background-color: pink;
+}
