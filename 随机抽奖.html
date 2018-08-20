@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-作业</title>
+    <style>
+        .box {
+            height: 300px;
+            background-color: rgba(229, 229, 229, 1);
+            text-align: center;
+        }
+
+        h3 {
+            line-height: 100px;
+        }
+
+        .name {
+            width: 200px;
+            height: 100px;
+            background-color: rgb(169, 196, 176);
+            margin: 0px auto;
+            margin-top: -20px;
+            font-size: 20px;
+            font-weight: 800;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .foot {
+            width: 200px;
+            height: 40px;
+            margin: 30px auto;
+            /* border: 1px solid gray; */
+            position: relative;
+        }
+
+        .stop {
+            width: 80px;
+            height: 40px;
+            background-color: yellowgreen;
+            font-size: 16px;
+            font-weight: 500;
+            text-align: center;
+            line-height: 40px;
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+        }
+
+        .start {
+            width: 80px;
+            height: 40px;
+            background-color: yellowgreen;
+            font-size: 16px;
+            font-weight: 500;
+            text-align: center;
+            line-height: 40px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h3>恭喜您中奖了：</h3>
+        <div class="name"></div>
+        <div class="foot">
+            <div class="stop">STOP</div>
+            <div class="start">START</div>
+        </div>
+    </div>
+
+    <script>
+        let n, p;
+        let m = 0;
+        let q = 0;
+        //存名字
+        let arr = ["曹华胜", "刘桐", "徐小杨", "张明浩", "曹放", "陈雪平", "陈彦", "邓坚", "杜康", "方思林", "付代兵", "洪星", "侯钰相", "李露", "李强", "刘藉穗", "龙宇", "罗番", "骆毅", "欧阳柯", "彭剑锋", "任敏", "任云飞", "谭覃", "田仁杰", "王兰", "王秋梅", "王烁棚", "王伟", "王乙霖", "巫晓娟", "吴海荣 ", "夏敏", "肖雨", "徐建", "徐宇", "晏继梅", "杨荘", "张立"];
+        // console.log(Math.random()*7+0);
+        //获取事件源
+        let stop = document.querySelector('.stop');
+        let name = document.querySelector('.name');
+        let start = document.querySelector('.start');
+
+        //开始
+        start.addEventListener('click', fn1);
+        function fn1() {
+            q = 1;
+            clearInterval(n);
+            n = setInterval(() => {
+                let s = Math.round(Math.random() * (arr.length - 1) + 0);
+                name.innerHTML = arr[s];
+            }, 50);
+        }
+        //停止
+        stop.addEventListener('click', fn2);
+        function fn2() {
+            // 建议使用的方法一：
+            if (q == 1) {
+                q = 0; //防止用户在未点击开始之前 点击停止按钮。
+                clearInterval(n);
+                p = setInterval(() => {
+                    let s = Math.floor(Math.random() * arr.length + 0);
+                    name.innerHTML = arr[s];
+                    m++;
+                    if (m > 10) {
+                        clearInterval(p);
+                        m = 0;
+                    }
+                }, 200);
+            }
+        }
+            //方案二：
+        //     setTimeout(()=>{
+        //         clearInterval(n);
+        //     },500)
+        // }
+    </script>
+</body>
+
+</html>
