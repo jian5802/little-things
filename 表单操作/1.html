@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQ表单</title>
+    <script src="./jquery-3.3.1.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .content {
+            width: 800px;
+            margin: 20px auto;
+            /* border: 1px solid gray; */
+            position: relative;
+            text-align: center;
+        }
+
+        .top {
+            margin: 20px auto;
+            width: 300px;
+            text-align: center;
+            position: relative;
+            /* border: 1px solid green; */
+        }
+
+        .top input {
+            margin: 10px auto;
+            line-height: 20px;
+        }
+
+        .add {
+            width: 50px;
+            height: 20px;
+            border: 1px solid gray;
+            position: absolute;
+            right: 150px;
+        }
+
+        .reset {
+            width: 50px;
+            height: 20px;
+            border: 1px solid gray;
+            position: absolute;
+            right: 80px;
+        }
+
+        .foot {
+            width: 750px;
+            margin: 50px auto;
+            /* text-align: center; */
+            /* border: 1px solid red; */
+        }
+        .table{
+            margin: 0 auto;
+        }
+        .line {
+            width: 100px;
+            height: 30px;
+            text-align: center;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <article class="content">
+        <h2>学生信息列表</h2>
+        <form action="" class="top">
+            学号：
+            <input type="text">
+            <br> 姓名：
+            <input type="text">
+            <br> 性别：
+            <input type="text">
+            <br> 年龄：
+            <input type="text">
+            <br> 学历：
+            <input type="text">
+            <br> 成绩：
+            <input type="text">
+            <br>
+
+            <input type="button" value="添加" class="add">
+            <input type="reset" class="reset">
+        </form>
+
+        <section class="foot">
+            <table class="table">
+                <tr class="tr">
+                    <th class="num line">学号</th>
+                    <th class="name line">姓名</th>
+                    <th class="sex line">性别</th>
+                    <th class="age line">年龄</th>
+                    <th class="education line">学历</th>
+                    <th class="score line">成绩</th>
+                    <th class="deletions line">删改</th>
+                </tr>
+            </table>
+        </section>
+    </article>
+
+    <script>
+        let v = [];
+        $('.add').click(function () {
+            //保存输入框的值到数组
+            let input = $('.top input');
+            $('.top input').attr('value', function (index, value) {
+                v[index] = this.value;
+            });
+            //删除最后两个元素（表单里的添加按钮和重置按钮）
+            v.pop();
+            v.pop();
+
+            //添加新行
+            let newTr = $('<tr></tr>')
+            $('.table').append(newTr);
+            // console.log( $('.table tr'));
+            for (let i = 0; i < v.length; i++) {
+                newTr.append('<td>' + v[i] + '</td>');
+            }
+            newTr.append('<td><span class="modify">修改/</span><span  class="delet">删除</span></td>');
+            //改变鼠标样式
+            newTr.children().css("cursor", "pointer");
+
+            //删除功能
+            $('.delet').click(function () {
+                $(this).parent().parent().remove();
+            });
+
+            //修改功能
+            $('.modify').click(function () {
+                let This = this;
+                $(This).parent().parent().attr("contenteditable", "true");
+            });
+
+            newTr.blur(function(){
+                // console.log(this);
+                $(this).attr("contenteditable","false");
+            });
+        });
+    </script>
+</body>
+
+</html>
