@@ -12,7 +12,9 @@ ul,a{
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing:border-box;  Firefox 
 }*/
-
+.clear{
+	clear: both;
+}
 .header{
 	width: 100%;
 	height: 170px;
@@ -135,7 +137,9 @@ ul,a{
 	line-height: 38px;
 	color: #999;
 }
-
+.banben a:hover{
+	color: #23ac38;
+}
  #g{
 	color: green;
 }
@@ -158,6 +162,9 @@ ul,a{
 .search .user a{
 	line-height: 38px;
 	color: #999;
+}
+.user a:hover{
+	color: #23ac38;
 }
 
 .top{
@@ -197,13 +204,13 @@ ul,a{
 .top .navigation a{
 	/* border: 1px solid red; */
 	font-size: 15px;
-	color:black;
+	color: #333;
 	line-height: 60px;
 	z-index: 1;
 }
-/* .top .navigation:hover .hid{
-	z-index: 3;
-} */
+.navigation a:hover{
+	color: #23ac38;
+}
 
 
 .top .navigation .jt{
@@ -453,7 +460,6 @@ ul,a{
 	top: 0px;
 	/*border: 1px solid red;*/
 }
-
  .sx{
 	width: 2px;
 	height: 20px;
@@ -462,7 +468,7 @@ ul,a{
 	left: 0px;
 	background-color: #23ac38;
 }
-.more{
+.news .more{
 	line-height: 20px;
 	font-size: 13px;
 	color: #999;
@@ -583,71 +589,66 @@ ul,a{
 .news .tools{
 	width: 324px;
 	height: 256px;
-	/*border: 1px solid red;*/
+	/* border: 1px solid red; */
 	position: absolute;
 	right: 0px;
 	bottom: 0px;
 }
-
 .tools .download{
 	width: 324px;
 	height: 210px;
-	border: 1px solid gray;
+	/* border: 1px solid gray; */
 	position: absolute;
 	bottom: 0px;
+	left: 0px;
 }
-/*.tools .download .down{
+
+.download .down{
 	width: 106px;
 	height: 104px;
 	border: 1px solid gray;
-}*/
+	transition: all 0.5s;
+}
+.download .down:hover{
+	transform: translate(0px,-2px);
+	box-shadow: 0px 2px 2px 2px gray;
+}
 .tools .download .down_one{
-	width: 106px;
-	height: 104px;
-	border: 1px solid gray;
+	border-right: none;
+	border-bottom: none;
 	position: absolute;
 	left: 0px;
 	top: 0px;
 }
 .tools .download .down_two{
-	width: 106px;
-	height: 104px;
-	border: 1px solid gray;
+	border-right: none;
+	border-bottom: none;
 	position: absolute;
-	left: 108px;
+	left: 106px;
 	top: 0px;
 }
 .tools .download .down_three{
-	width: 106px;
-	height: 104px;
-	border: 1px solid gray;
+	border-bottom: none;
 	position: absolute;
-	left: 216px;
+	left: 212px;
 	top: 0px;
 }
 .tools .download .down_four{
-	width: 106px;
-	height: 104px;
-	border: 1px solid gray;
+	border-right: none;
 	position: absolute;
+	left: 0px;
 	bottom: 0px;
-	right: 216px;
 }
 .tools .download .down_five{
-	width: 106px;
-	height: 104px;
-	border: 1px solid gray;
+	border-right: none;
 	position: absolute;
+	left: 106px;
 	bottom: 0px;
-	right: 108px;
 }
 .tools .download .down_six{
-	width: 106px;
-	height: 104px;
-	border: 1px solid gray;
 	position: absolute;
+	left: 212px;
 	bottom: 0px;
-	right: 0px;
 }
 
 .tools .download img{
@@ -702,22 +703,29 @@ ul,a{
 .left .luntan{
 	width: 606px;
 	height: 564px;
-	border: 1px solid gray;
+	/* border: 1px solid gray; */
 	position: absolute;
 	bottom: 0px;
 	right: 0px;
 }
-
+.luntan .ruanjian:hover{
+	border-top: none;
+	transform: translate(0px, -2px);
+	box-shadow: 0px 2px 2px 2px gray;
+}
 .left .luntan .ruanjian{
 	width: 303px;
 	height: 141px;
+	transition: all 0.5s ease 0s;
 	border: 1px solid gray;
+	border-bottom: none;
 }
 
 .left .luntan .left_one{
 	position: absolute;
 	top: 0px;
 	left: 0px;
+	border-right: none;
 }
 .left .luntan .left_two{
 	position: absolute;
@@ -728,6 +736,7 @@ ul,a{
 	position: absolute;
 	top: 141px;
 	left: 0px;
+	border-right: none;
 }
 .left .luntan .left_four{
 	position: absolute;
@@ -738,6 +747,7 @@ ul,a{
 	position: absolute;
 	top: 282px;
 	left: 0px;
+	border-right: none;
 }
 .left .luntan .left_six{
 	position: absolute;
@@ -748,11 +758,14 @@ ul,a{
 	position: absolute;
 	top: 423px;
 	left: 0px;
+	border-bottom: 1px solid gray;
+	border-right: none;
 }
 .left .luntan .left_eight{
 	position: absolute;
 	top: 423px;
 	left: 303px;
+	border-bottom: 1px solid gray;
 }
 
 .left .luntan button{
@@ -803,11 +816,12 @@ ul,a{
 .right .commodity{
 	width: 606px;
 	height: 564px;
-	border: 1px solid gray;
+	/* border: 1px solid gray; */
 	position: absolute;
 	bottom: 0px;
 	right: 0px;
 }
+
 .right .commodity .commodity_tp{
 	width: 605px;
 	height: 282px;
@@ -816,7 +830,89 @@ ul,a{
 	top: 0px;
 	left: 0px;
 	border: 1px solid gray;
-	border-right: 2px solid gray;
+	border-bottom: none;
+}
+
+.right .commodity .commodity_tp .imgs{
+	width: 605px;
+	height: 282px;
+	overflow: hidden;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	border: 1px solid gray;
+	border-bottom: none;
+}
+.img_ul{
+	width: 2420px;
+	height: 282px;
+	position: absolute;
+	left: 0px;
+	/* transition: all 0.5s ease 0s; 
+	如果需要过渡效果，则保留3个li标签就可实现，这里只保留了一个li标签，不再写保留3个的情况。
+	*/
+}
+
+.point_ul{
+	width: 105px;
+	height: 22px;
+	position: absolute;
+	left: 250px;
+	top: 240px;
+}
+.point_ul li{
+	float: left;
+	display: block;
+	margin-left: 10px;
+}
+.point_ul .point_li{
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: white;
+}
+.img_ul li{
+	display: block;
+	width: 605px;
+	height: 282px;
+	float: left;
+}
+.left_move{
+	width: 40px;
+	height: 80px;
+	display: none;
+	color: white;
+	text-align: center;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 80px;
+	border-bottom-right-radius: 10%;
+	border-top-right-radius: 10%;
+	position: absolute;
+	top: 101px;
+	left: 0px;
+}
+.right_move{
+	width: 40px;
+	height: 80px;
+	display: none;
+	color: white;
+	text-align: center;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 80px;
+	border-bottom-left-radius: 10%;
+	border-top-left-radius: 10%;
+	position: absolute;
+	top: 101px;
+	right: 0px;
+}
+.commodity_tp img{
+	transition: all 0.5s;
+}
+.commodity_tp img:hover{
+	transform: scale(1.1);
+
 }
 .right .commodity .commodity_kinds{
 	width: 606px;
@@ -828,25 +924,33 @@ ul,a{
 }
 
 .right .commodity .shop{
-	width: 303px;
+	width: 302px;
 	height: 141px;
 	border: 1px solid gray;
+	transition: all 0.5s ease 0s;
 }
-
+.commodity_kinds .shop:hover{
+	transform: translate(0px, -2px);
+	box-shadow: 0px 2px 2px 2px gray;
+}
 .right .commodity .c_one{
 	position: absolute;
 	top: 0px;
 	left: 0px;
+	border-right: none;
+	border-bottom: none;
 }
 .right .commodity .c_two{
 	position: absolute;
 	top: 0px;
 	left: 303px;
+	border-bottom: none;
 }
 .right .commodity .c_three{
 	position: absolute;
 	top: 141px;
 	left: 0px;
+	border-right: none;
 }
 .right .commodity .c_four{
 	position: absolute;
@@ -883,10 +987,10 @@ ul,a{
 .left_foot{
 	width: 605px;
 	height: 170px;
-	border: 2px solid gray;
+	border: 1px solid gray;
 	position: relative;
-	left: 328px;
-	bottom:258px;
+	left: 330px;
+	bottom:250px;
 }
 .left_foot a:hover{
 	color: #23ac38;
@@ -895,14 +999,16 @@ ul,a{
 .right_foot a:hover{
 	color: #23ac38;
 }
-
+/* .lf_one_a a:hover{
+	color: #23ac38;
+} */
 .right_foot{
 	width: 605px;
 	height: 170px;
-	border: 2px solid gray;
+	border: 1px solid gray;
 	position: relative;
-	left: 964px;
-	bottom:432px;
+	left: 966px;
+	bottom:424px;
 }
 .left_foot .lf_one{
 	width: 606px;
@@ -1169,7 +1275,7 @@ ul,a{
 	height: 450px;
 	/* border: 1px solid gray; */
 	margin: 0 auto;
-	margin-top: -430px;
+	margin-top: -410px;
 	position: absolute;
 	left: 328px;
 }
@@ -1179,28 +1285,28 @@ ul,a{
 .con_one{
 	width:300px;
 	height: 450px;
-	border: 1px solid gray; 
+	/* border: 1px solid gray;  */
 	position: absolute;
 	left: 0px;
 }
 .con_two{
 	width:300px;
 	height: 450px;
-	border: 1px solid gray; 
+	/* border: 1px solid gray;  */
 	position: absolute;
 	left: 314px;
 }
 .con_three{
 	width:300px;
 	height: 450px;
-	border: 1px solid gray; 
+	/* border: 1px solid gray;  */
 	position: absolute;
 	left: 628px;
 }
 .con_four{
 	width:300px;
 	height: 450px;
-	border: 1px solid gray; 
+	/* border: 1px solid gray;  */
 	position: absolute;
 	right: 0px;
 }
@@ -1210,7 +1316,7 @@ ul,a{
 	height: 200px;
 	/* border: 1px solid gray; */
 	position: absolute;
-	top: 0px;
+	top: 30px;
 	left: 0px;
 	overflow: hidden;
 }
@@ -1239,11 +1345,11 @@ ul,a{
 	color: #fff;
 }
 .consultation .list{
-	width: 300px;
+	width: 298px;
 	height: 248px;
-	/* border: 1px solid gray; */
+	border: 1px solid gray;
 	position: absolute;
-	bottom: 0;
+	bottom: -30px;
 	right: 0;
 }
 .list a{
@@ -1270,7 +1376,7 @@ ul,a{
 .bottom{
 	width: 100%;
 	height: 300px;
-	margin-top: 30px;
+	margin-top: 100px;
 	/* border: 1px solid gray; */
 	background-color: rgba(229, 229, 229, 0.8);
 	position: relative;
