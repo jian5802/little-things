@@ -50,7 +50,7 @@ function ponits_css() {
         if (index == i) {
             return '#23ac38';
         } else {
-            return 'white';
+            return 'rgba(126, 124, 124, 0.5)';
         }
     });
 }
@@ -96,7 +96,6 @@ function fRight() {
     let newLi = $('<li><img src=' + arr[i] + '> </li>');
     img_ul.append(newLi);
     img_ul.children().eq(0).remove();
-
 
 
     //加载全部图片后，不添加过渡效果，比较浪费资源

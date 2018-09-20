@@ -270,10 +270,16 @@ ul,a{
 	height: 660px;
 	position: relative;
 }
-
+.tp .tp_imgs{
+	width: 100%;
+	height: 550px;
+	border: 1px solid gray;
+	position: relative;
+}
+.tp_imgs .tp_ul{
+	
+}
 .tp a{
-	/* display: block;
-	width: 100%; */
 	line-height: 550px;
 	position: absolute;
 	top: 0;
@@ -840,7 +846,7 @@ ul,a{
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	border: 1px solid gray;
+	/* border: 1px solid gray; */
 	border-bottom: none;
 }
 .img_ul{
@@ -848,8 +854,8 @@ ul,a{
 	height: 282px;
 	position: absolute;
 	left: 0px;
-	/* transition: all 0.5s ease 0s; 
-	如果需要过渡效果，则保留3个li标签就可实现，这里只保留了一个li标签，不再写保留3个的情况。
+	/* transition: all 0.5s ease 0s;  */
+	/* 如果需要过渡效果，则保留3个li标签就可实现，这里只保留了一个li标签，不再写保留3个的情况。
 	*/
 }
 
@@ -869,7 +875,7 @@ ul,a{
 	width: 10px;
 	height: 10px;
 	border-radius: 50%;
-	background-color: white;
+	background-color: rgba(126, 124, 124, 0.5);
 }
 .img_ul li{
 	display: block;
