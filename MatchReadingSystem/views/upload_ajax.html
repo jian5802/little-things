@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>上传页面</title>
+    <style>
+    #img{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+    <form action="" method="post" enctype="multipart/form-data">
+        <label class="header" for="images">
+            <img src="/img/3.jpg" alt="" id="img">
+        </label>
+        <input type="file" name="images" id="images" style="display:none">
+        <input type="hidden" value="" id="imgval">
+        <input type="button" value="保存">
+        
+    </form>
+
+    <script>
+        let img = document.querySelector('#images');
+        //当你选择文件的时候，value值会发生改变，触发change事件
+        img.onchange = function(){
+            //获取选中的文件信息：文件内容
+            console.log(this.files[0]);
+            let _this = this;
+            // 使用ajax发送图片到服务器
+            let xhr = new XMLHttpRequest();
+            xhr.open('POST', '/upload');
+            //创建一个表单数据对象
+            let formdata = new FormData();  //创建一个表单数据对象 可以理解为创建一个  <form>  </form>  
+            formdata.append("images", _this.files[0]);        //往表单里面追加input  name="images"  value="文件"
+            formdata.append("username", "徐小杨");
+            formdata.append("age", "18");
+
+            //不用设置请求头
+            xhr.send(formdata);
+            xhr.onreadystatechange = function () {
+                if(xhr.readyState == 4 && xhr.status==200){
+                    let data = JSON.parse(xhr.responseText);
+                    console.log(data);
+                    document.querySelector('#img').src = data.path;
+                    document.querySelector('#imgval').value = data.path;
+                }
+            }
+
+        }
+    </script>
+</body>
+</html>
