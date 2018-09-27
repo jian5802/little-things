@@ -1,0 +1,70 @@
+<% include head.html%>
+<div class="layui-body">
+
+    <blockquote class="layui-elem-quote news_search">
+        <div class="layui-inline">
+            <a class="layui-btn layui-btn-normal newsAdd_btn" href="/admin/addNovel">添加小说</a>
+        </div>
+        <div class="layui-inline">
+            <a class="layui-btn layui-btn-danger batchDel">批量删除</a>
+        </div>
+    </blockquote>
+    <div class="layui-form news_list">
+        <table class="layui-table">
+            <colgroup>
+                <col>
+                <col width="9%">
+                <col width="9%">
+                <col width="40%">
+                <col width="9%">
+                <col width="9%">
+                <col width="9%">
+                <col width="15%">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th><input type="checkbox" name="" lay-skin="primary" lay-filter="allChoose" id="allChoose">
+                        <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div>
+                    </th>
+                    <th style="text-align:left;">小说名字</th>
+                    <th style="text-align:center;">作者</th>
+                    <th style="text-align:center;">描述</th>
+                    <th>字数</th>
+                    <th>封面</th>
+                    <th>发布时间</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody class="news_content">
+                <% for (let c of search){%>
+                <tr>
+                    <td><input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose">
+                        <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div>
+                    </td>
+                    <td align="left"><%=c.bname%></td>
+                    <td><%=c.author%></td>
+                    <td><%=c.describe1%></td>
+                    <td><%=c.wordnum%></td>
+                    <td >
+                        <img src="<%=c.cover%>" alt="" class="coverImg">
+                    </td>
+                    <td><%=c.addtime%></td>
+                    <td>
+                        <a class="layui-btn layui-btn-mini listChapter layui-btn-sm news_edit"  bid="<%=c.bid %>" href="/admin/novelAll/chapter">
+                            <i class="layui-icon layui-icon-edit"></i> </a>
+                        <a class="layui-btn layui-btn-danger delete  layui-btn-mini layui-btn-sm news_collect" bid="<%=c.bid%>">
+                            <i class="layui-icon layui-icon-delete"></i> 
+                        </a></td>
+                </tr>
+                <%}%>
+            </tbody>
+        </table>
+    </div>
+    <div id="page">
+        <div class="layui-box layui-laypage layui-laypage-default" id="layui-laypage-0"><span class="layui-laypage-curr"><em
+                    class="layui-laypage-em"></em><em>1</em></span><a href="javascript:;" data-page="2">2</a><a href="javascript:;"
+                data-page="3">3</a><a href="javascript:;" class="layui-laypage-next" data-page="2">下一页</a></div>
+    </div>
+
+</div>
+<% include foot.html%>

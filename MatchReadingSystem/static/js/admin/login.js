@@ -29,6 +29,13 @@ $(function () {
                       });
                       return;
                 }
+                if(result.r == 'coder_err'){
+                    layer.msg('验证码错误，请核对后重新输入！', {
+                        time: 5000, //5s后自动关闭
+                        btn: ['OK']
+                      });
+                      return;
+                }
                 if(result.r=='ok'){
                     window.location.href = '/admin';
                 }

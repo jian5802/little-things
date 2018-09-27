@@ -20,3 +20,39 @@ body{overflow:hidden;}
     position: absolute;
     right: 0px;
 }
+
+#register_user{
+    z-index: 999;
+    width: 520px;
+    height: 500px;
+    margin-top: 100px;
+    position: relative;
+    left: 45%;
+    /* background-color: aquamarine; */
+}
+#register_user #register{
+    z-index: 999;
+    display: block;
+    width: 540px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* background-color: aquamarine; */
+}
+
+#register_user #register input{
+    width: 400px;
+}
+
+#register_user #register .text{
+    width: 400px;
+}
+#register_user #register label{
+    color: bisque;
+}
+
+
+#register_user #register #sub{
+    position: absolute;
+    right: 30px;
+}

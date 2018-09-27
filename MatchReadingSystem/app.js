@@ -1,4 +1,4 @@
-//
+﻿//
 
 const express = require('express');
 const ejs = require('ejs');
@@ -16,9 +16,7 @@ const app = express();
 let secret = 'sports.app.myweb.www';
 
 //
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(cookieParser(secret));
 
 //
@@ -33,18 +31,16 @@ global.conn = mysql.createConnection({
     user: 'root',
     password: 'jian5802',
     port: 3306,
-    database: 'novelapp'
+    database: 'novelapp1'
 });
 conn.connect();
 
 //session
 app.use(session({
-    secret: secret,
-    resave: true,
-    saveUninitialized: true,
-    cookie: {
-        maxAge: 30 * 24 * 3600 * 1000
-    }
+    secret:secret,
+    resave:true,
+    saveUninitialized:true,
+    cookie:{maxAge:30*24*3600*1000}
 }));
 
 
@@ -86,7 +82,7 @@ app.get('/upload', (req, res) => {
 });
 
 //接收上传数据 使用第三方模块 multer
-//头像更新处理
+//管理员头像更新处理
 app.post('/uploadimg', upload.single('images'), (req, res) => {
     //req.body
     // let sql = `update admin set aimg = ? where aid = ?`;
@@ -102,7 +98,7 @@ app.post('/uploadimg', upload.single('images'), (req, res) => {
     res.json(req.file);
 });
 
-//个人信息表单更新处理
+//管理员个人信息表单更新处理
 app.post('/uploadinfo', upload.single('images'), (req, res) => {
     let d = req.body;
     console.log(req.session.aid);
@@ -161,11 +157,20 @@ app.post('/uploads', upload.array('images', 1000), (req, res) => {
         "data": data
     });
 });
-
+app.post('/upload2', upload.single('images'), (req, res) => {
+    res.json(req.file);
+});
+app.post('/upload5', upload.single('images'), (req, res) => {
+    res.json(req.file);
+    console.log(req.file);
+});
 //管理员登录
 app.use('/admin/login', require('./module/admin/login'));
 //管理员主界面
 app.use('/admin', require('./module/admin/admin'));
+
+//主页面各种操作
+app.use('/',require('./module/user/index'));
 
 //用户登录
 app.use('/user/login', require('./module/user/login'));

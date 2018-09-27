@@ -4,31 +4,22 @@
     <blockquote class="layui-elem-quote news_search">
         <div class="layui-inline">
             <div class="layui-input-inline">
-                <input type="text" value="" placeholder="请输入关键字" class="layui-input search_input">
+                <input type="text" value="" placeholder="请输入关键字" class="layui-input search_input getNovelTitle"  autocomplete="on">
             </div>
-            <a class="layui-btn search_btn">查询</a>
+            <a class="layui-btn search_btn searchNovel">查询</a>
         </div>
         <div class="layui-inline">
-            <a class="layui-btn layui-btn-normal newsAdd_btn">添加文章</a>
-        </div>
-        <div class="layui-inline">
-            <a class="layui-btn recommend" style="background-color:#5FB878">推荐文章</a>
-        </div>
-        <div class="layui-inline">
-            <a class="layui-btn audit_btn">章节管理</a>
+            <a class="layui-btn layui-btn-normal newsAdd_btn" href="/admin/addNovel">添加小说</a>
         </div>
         <div class="layui-inline">
             <a class="layui-btn layui-btn-danger batchDel">批量删除</a>
-        </div>
-        <div class="layui-inline">
-            <div class="layui-form-mid layui-word-aux">本页面刷新后除新添加的文章外所有操作无效，关闭页面所有数据重置</div>
         </div>
     </blockquote>
     <div class="layui-form news_list">
         <table class="layui-table">
             <colgroup>
-                 <col >
-                <col width="9%"> 
+                <col>
+                <col width="9%">
                 <col width="9%">
                 <col width="40%">
                 <col width="9%">
@@ -45,7 +36,7 @@
                     <th style="text-align:center;">作者</th>
                     <th style="text-align:center;">描述</th>
                     <th>字数</th>
-                    <th>是否展示</th>
+                    <th>封面</th>
                     <th>发布时间</th>
                     <th>操作</th>
                 </tr>
@@ -58,17 +49,17 @@
                     </td>
                     <td align="left"><%=c.bname%></td>
                     <td><%=c.author%></td>
-                    <td><%=c.describe%></td>
+                    <td><%=c.describe1%></td>
                     <td><%=c.wordnum%></td>
-                    <td><input type="checkbox" name="show" lay-skin="switch" lay-text="是|否" lay-filter="isShow">
-                        <div class="layui-unselect layui-form-switch" lay-skin="_switch"><em>否</em><i></i></div>
+                    <td >
+                        <img src="<%=c.cover%>" alt="" class="coverImg">
                     </td>
-                    <td>2017-04-14</td>
+                    <td><%=c.addtime%></td>
                     <td>
-                        <a class="layui-btn layui-btn-mini listChapter layui-btn-sm news_edit"  bid="<%=c.bid %>">
-                            <i class="iconfont icon-edit"></i> 编辑</a>
-                        <a class="layui-btn layui-btn-normal delete  layui-btn-mini layui-btn-sm news_collect" bid="<%=c.bid%>">
-                             删除
+                        <a class="layui-btn layui-btn-mini listChapter layui-btn-sm news_edit"  bid="<%=c.bid %>" href="/admin/novelAll/chapter">
+                            <i class="layui-icon layui-icon-edit"></i> </a>
+                        <a class="layui-btn layui-btn-danger delete  layui-btn-mini layui-btn-sm news_collect" bid="<%=c.bid%>">
+                            <i class="layui-icon layui-icon-delete"></i> 
                         </a></td>
                 </tr>
                 <%}%>
